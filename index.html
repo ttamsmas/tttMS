@@ -13,6 +13,7 @@
   </head>
   <body style="border:1px black solid">
     <h1>T^3</h1>
+    <p id="message"></p>
     <section>
       <form id="sign-up-form">
         <fieldset style="border: 1px solid black">
@@ -30,7 +31,7 @@
     <section>
       <form id="sign-in-form">
         <fieldset style="border: 1px solid black">
-          <legend>Sign in!</legend>
+          <legend>Sign In</legend>
           <label for="sign-in-email">Email</label>
           <input id="sign-in-email" type="email" name="credentials[email]" placeholder="Email">
           <label for="sign-in-password">Password</label>
@@ -40,9 +41,9 @@
       </form>
     </section>
     <section>
-      <form id="change-password-form">
+      <form id="change-password-form" style="display: none">
         <fieldset style="border: 1px solid black">
-          <legend>Change Password!</legend>
+          <legend>Change Password</legend>
           <label for="old-password">Old Password</label>
           <input id="old-password" type="password" name="passwords[old]" placeholder="Password">
           <label for="new-password_confirmation">New Password</label>
@@ -52,9 +53,9 @@
       </form>
       </section>
       <section>
-      <form id="sign-out">
+      <form id="sign-out" style="display: none">
         <fieldset>
-          <legend>Change Password!</legend>
+          <legend>Sign Off</legend>
           <label for="sign-out">Sign Out</label>
           <input type="submit" value="Sign-Out!">
         </fieldset>

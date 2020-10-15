@@ -13,6 +13,10 @@ const signUpFailure = function (error) {
 const signInSuccess = function (response) {
   $('#message').text('Thanks for signing in! ' + response.user.email)
   store.user = response.user
+  $('#change-password-form').show()
+  $('#sign-out').show()
+  $('#sign-in-form').hide(true)
+  $('#sign-up-form').hide(true)
 }
 
 const signInFailure = function (error) {

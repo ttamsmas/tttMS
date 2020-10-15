@@ -28,8 +28,17 @@ const updatePassword = function (data) {
   })
 }
 
+const signOut = function (data) {
+  return $.ajax({
+    url: config.apiUrl + '/sign-out',
+    headers: {'Authorization': 'Bearer ' + store.user.token},
+    method: 'DELETE'
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
-  updatePassword
+  updatePassword,
+  signOut
 }

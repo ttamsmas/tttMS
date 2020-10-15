@@ -36,8 +36,18 @@ const onUpdatePassword = function (event) {
     .catch(ui.updateFailure)
 }
 
+const onSignOut = function (event) {
+  event.preventDefault()
+  const form = event.target
+  const data = getFormFields(form)
+  api.signOut(data)
+    .then(ui.signOutSuccess)
+    .catch(ui.signOutFailure)
+}
+
 module.exports = {
   onSignUp,
   onSignIn,
-  onUpdatePassword
+  onUpdatePassword,
+  onSignOut
 }

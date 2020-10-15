@@ -20,11 +20,13 @@ const signInSuccess = function (response) {
   store.user = response.user
   $('#change-password-form').show()
   $('#sign-out-form').show()
+  $('#new-game').show()
   $('#sign-in-form').hide()
   $('#sign-up-form').hide()
   $('#sign-up-email').val('')
   $('#sign-up-password').val('')
   $('#sign-up-password_confirmmation').val('')
+
 }
 
 const signInFailure = function (error) {
@@ -50,6 +52,7 @@ const signOutSuccess = function (response) {
   $('#sign-up-email').val('')
   $('#sign-up-password').val('')
   $('#sign-up-password_confirmation').val('')
+  $('#new-game').hide()
   store.user = ''
 }
 

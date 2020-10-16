@@ -5,7 +5,7 @@ URL_PATH="/games"
 
 curl "${API}${URL_PATH}" \
   --include \
-  --request GET \
+  --request POST \
   --header "Authorization: Bearer ${TOKEN}" \
   --data '{
     "games": {}

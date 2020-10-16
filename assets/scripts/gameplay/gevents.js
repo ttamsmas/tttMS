@@ -13,6 +13,25 @@ const onNewGame = function (event) {
     .catch(gui.newGameSuccess)
 }
 
+const onClick = function (event) {
+  const form = event.target
+  const cellIndex = form.id
+  const sendUpdate = {
+    game: {
+      cell: {
+        index: cellIndex,
+        value: 'x'
+      },
+      over: 'false'
+    }
+  }
+  console.log(sendUpdate)
+  gapi.clicked(sendUpdate)
+    .then(gui.clickedSuccess)
+    .catch(gui.clickedFailure)
+}
+
 module.exports = {
-  onNewGame
+  onNewGame,
+  onClick
 }

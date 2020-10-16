@@ -12,23 +12,14 @@ const newGame = function (data) {
   })
 }
 
-const clicked = function (form) {
+const clicked = function (data) {
   return $.ajax({
-    url: config.apiUrl + '/games/' + store.user.games,
+    url: config.apiUrl + '/games/' + store.game,
     headers: {'Authorization': 'Bearer ' + store.user.token},
     method: 'PATCH',
-    // take the button's index and change the game's array to represent the click
+    data: data
   })
 }
-
-// const updatePassword = function (data) {
-//   return $.ajax({
-//     url: config.apiUrl + '/change-password',
-//     headers: {'Authorization': 'Bearer ' + store.user.token},
-//     method: 'PATCH',
-//     data: data
-//   })
-// }
 
 module.exports = {
   newGame,

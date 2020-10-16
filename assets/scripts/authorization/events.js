@@ -30,7 +30,9 @@ const onSignIn = function (event) {
 const onUpdatePassword = function (event) {
   event.preventDefault()
   const form = event.target
+  console.log(form)
   const data = getFormFields(form)
+  console.log(data)
   api.updatePassword(data)
     .then(ui.updateSuccess)
     .catch(ui.updateFailure)

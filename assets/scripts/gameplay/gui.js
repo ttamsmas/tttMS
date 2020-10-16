@@ -4,7 +4,7 @@ const store = require('../store.js')
 
 const newGameSuccess = function (response) {
   $('#message').text('New Game Succesfully Created')
-  store.games = response.games
+  store.game = response.game._id
 }
 
 const newGameFailure = function (error) {

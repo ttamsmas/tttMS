@@ -3,6 +3,7 @@
 const getFormFields = require('./../../../lib/get-form-fields')
 const gui = require('./gui')
 const gapi = require('./gapi')
+const store = require('./../store')
 
 const onNewGame = function (event) {
   event.preventDefault()
@@ -20,7 +21,7 @@ const onClick = function (event) {
     game: {
       cell: {
         index: cellIndex,
-        value: 'x'
+        value: store.turn
       },
       over: 'false'
     }
@@ -29,6 +30,15 @@ const onClick = function (event) {
   gapi.clicked(sendUpdate)
     .then(gui.clickedSuccess)
     .catch(gui.clickedFailure)
+  if (store.turn === 'x') {
+    store.turn = 'o'
+  } else {
+    store.turn = 'x'
+  }
+  console.log(event.target)
+  // turn event.target off after being clicked
+  $('event.target').off('click')
+  $('event.target').val(store.turn)
 }
 
 module.exports = {

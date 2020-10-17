@@ -20,9 +20,14 @@ const clickedFailure = function (error) {
   $('#message').text('Selection Failed, Try Again')
 }
 
+const invalidMove = function () {
+  $('#message').text('That Tile Has Been Taken')
+}
+
 module.exports = {
   newGameSuccess,
   newGameFailure,
   clickedFailure,
-  clickedSuccess
+  clickedSuccess,
+  invalidMove
 }

@@ -27,19 +27,23 @@ const onClick = function (event) {
     }
   }
   console.log(sendUpdate)
-  gapi.clicked(sendUpdate)
-    .then(gui.clickedSuccess)
-    .catch(gui.clickedFailure)
-  if (store.turn === 'x') {
-    store.turn = 'o'
+  const currentValue = $(event.target).text()
+  console.log(currentValue)
+  if (currentValue === '') {
+    gapi.clicked(sendUpdate)
+      .then(gui.clickedSuccess)
+      .catch(gui.clickedFailure)
+    $(event.target).html(store.turn)
+    if (store.turn === 'x') {
+      store.turn = 'o'
+    } else {
+      store.turn = 'x'
+    }
   } else {
-    store.turn = 'x'
+    gui.invalidMove
   }
   console.log(event.target)
   // turn event.target off after being clicked
-
-  // update tile value to x or o
-  $(event.target).html(store.turn)
   // document.querySelector(this).off()
 }
 

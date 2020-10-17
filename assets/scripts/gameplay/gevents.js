@@ -37,8 +37,10 @@ const onClick = function (event) {
   }
   console.log(event.target)
   // turn event.target off after being clicked
-  $('event.target').off('click')
-  $('event.target').val(store.turn)
+
+  // update tile value to x or o
+  $(event.target).html(store.turn)
+  // document.querySelector(this).off()
 }
 
 module.exports = {

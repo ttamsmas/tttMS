@@ -11,13 +11,13 @@ const newGameFailure = function (error) {
   $('#message').text('New Game Failed, Try Again')
 }
 
-const clickedSuccess = function (error) {
+const clickedSuccess = function (response) {
   $('#message').text('Click Success')
-  store.games = response.games
+  // store.games = response.games
 }
 
 const clickedFailure = function (error) {
-  $('#message').text('New Game Failed, Try Again')
+  $('#message').text('Selection Failed, Try Again')
 }
 
 module.exports = {

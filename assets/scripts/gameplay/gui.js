@@ -78,6 +78,10 @@ const playerStatsFail = function () {
   $('#message').text('No Player Record')
 }
 
+const loginFirst = function () {
+  $('#message').text('Sign In or Select New Game to Begin')
+}
+
 module.exports = {
   newGameSuccess,
   newGameFailure,
@@ -88,5 +92,6 @@ module.exports = {
   checkFail,
   blockMove,
   playerStatsAll,
-  playerStatsFail
+  playerStatsFail,
+  loginFirst
 }

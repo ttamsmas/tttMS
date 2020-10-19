@@ -30,21 +30,23 @@ const checkWinner = function (response) {
   console.log(response.game.cells)
   const currentGame = response.game.cells
   if (currentGame[0] !== '' && currentGame[0] === currentGame[1] && currentGame[1] === currentGame[2]) {
-    console.log('winner')
+    $('#xOTurn').text(currentGame[0] + ' is our winner!')
   } else if (currentGame[3] !== '' && currentGame[3] === currentGame[4] && currentGame[4] === currentGame[5]) {
-    console.log('winner')
+    $('#xOTurn').text(currentGame[3] + ' is our winner!')
   } else if (currentGame[6] !== '' && currentGame[6] === currentGame[7] && currentGame[7] === currentGame[8]) {
-    console.log('winner')
+    $('#xOTurn').text(currentGame[6] + ' is our winner!')
   } else if (currentGame[0] !== '' && currentGame[0] === currentGame[3] && currentGame[3] === currentGame[6]) {
-    console.log('winner')
+    $('#xOTurn').text(currentGame[0] + ' is our winner!')
   } else if (currentGame[1] !== '' && currentGame[1] === currentGame[4] && currentGame[4] === currentGame[7]) {
-    console.log('winner')
+    $('#xOTurn').text(currentGame[1] + ' is our winner!')
   } else if (currentGame[2] !== '' && currentGame[2] === currentGame[5] && currentGame[5] === currentGame[8]) {
-    console.log('winner')
+    $('#xOTurn').text(currentGame[2] + ' is our winner!')
   } else if (currentGame[0] !== '' && currentGame[0] === currentGame[4] && currentGame[4] === currentGame[8]) {
-    console.log('winner')
+    $('#xOTurn').text(currentGame[0] + ' is our winner!')
   } else if (currentGame[6] !== '' && currentGame[6] === currentGame[4] && currentGame[4] === currentGame[2]) {
-    console.log('winner')
+    $('#xOTurn').text(currentGame[6] + ' is our winner!')
+  } else if (currentGame[0] !== '' && currentGame[1] !== '' && currentGame[2] !== '' && currentGame[3] !== '' && currentGame[4] !== '' && currentGame[5] !== '' && currentGame[6] !== '' && currentGame[7] !== '' && currentGame[8] !== '') {
+    $('#xOTurn').text('Game is a Draw')
   }
 }
 

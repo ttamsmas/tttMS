@@ -11,6 +11,7 @@ const onNewGame = function (event) {
   const data = getFormFields(form)
   gapi.newGame(data)
     .then(gui.newGameSuccess)
+    .then($('.col-4').text(''))
     .catch(gui.newGameSuccess)
 }
 

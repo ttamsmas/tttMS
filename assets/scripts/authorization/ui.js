@@ -9,7 +9,7 @@ const signUpSuccess = function (response) {
   $('#sign-up-password_confirmmation').val('')
 }
 
-const signUpFailure = function (error) {
+const signUpFailure = function () {
   $('#message').text('Account Creation Failed, Please Try Again')
   $('#sign-up-password').val('')
   $('#sign-up-password_confirmmation').val('')
@@ -29,15 +29,15 @@ const signInSuccess = function (response) {
 
 }
 
-const signInFailure = function (error) {
+const signInFailure = function () {
   $('#message').text('Sign In Failed, Try Again')
 }
 
-const updateSucces = function (error) {
+const updateSucces = function () {
   $('#message').text('Password Update Complete')
 }
 
-const updateFail = function (error) {
+const updateFail = function () {
   $('#message').text('Update Failed, Please Try Again')
 }
 

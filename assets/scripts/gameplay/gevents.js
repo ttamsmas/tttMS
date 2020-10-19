@@ -47,7 +47,7 @@ const onClick = function (event) {
     if (currentValue === '') {
       gapi.clicked(sendUpdate)
         .then(gui.clickedSuccess)
-        .then(gapi.checkGame)
+        .then(gapi.checkGame) // pull current game board as array
         .then(gui.checkWinner)
         .catch(gui.clickedFailure)
       $(event.target).html(store.turn)

@@ -16,7 +16,6 @@ const newGameFailure = function () {
 const clickedSuccess = function (response) {
   $('#message').text('Click Success')
   $('#xOTurn').text(store.turn + ' Turn')
-  // store.games = response.games
 }
 
 const clickedFailure = function () {
@@ -27,12 +26,14 @@ const invalidMove = function () {
   $('#message').text('That Tile Has Been Taken')
 }
 
+// the check winner function matches values horizontally, vertically, and diagonally
+// if winner is selected, the store.winner value is changed to true, blocking future moves
 const checkWinner = function (response) {
   const currentGame = response.game.cells
   if (currentGame[0] !== '' && currentGame[0] === currentGame[1] && currentGame[1] === currentGame[2]) {
     $('#xOTurn').text(currentGame[0] + ' is our winner!')
     store.winner = true
-    const data = { over: true }
+    const data = { over: true } // pass over = true value to server's revords
     gapi.updateGameWinner(data)
   } else if (currentGame[3] !== '' && currentGame[3] === currentGame[4] && currentGame[4] === currentGame[5]) {
     $('#xOTurn').text(currentGame[3] + ' is our winner!')

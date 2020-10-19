@@ -48,7 +48,16 @@ const onClick = function (event) {
   }
 }
 
+const playerStats = function (event) {
+  event.preventDefault()
+  const player = store.user
+  gapi.playerStatistics(player)
+    .then(gui.playerStatsAll)
+    .catch(gui.playerStatsFail)
+}
+
 module.exports = {
   onNewGame,
-  onClick
+  onClick,
+  playerStats
 }

@@ -16,4 +16,5 @@ $(() => {
   $('#sign-out-form').on('submit', events.onSignOut)
   $('#new-game').on('submit', gevents.onNewGame)
   $('.container').on('click', gevents.onClick)
+  $('#player-stats').on('click', gevents.playerStats)
 })

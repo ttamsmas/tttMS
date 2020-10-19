@@ -26,7 +26,7 @@ const signInSuccess = function (response) {
   $('#sign-up-email').val('')
   $('#sign-up-password').val('')
   $('#sign-up-password_confirmmation').val('')
-
+  $('#player-stats').show()
 }
 
 const signInFailure = function () {
@@ -54,6 +54,7 @@ const signOutSuccess = function (response) {
   $('#sign-up-password_confirmation').val('')
   $('#new-game').hide()
   store.user = ''
+  $('#player-stats').hide()
 }
 
 module.exports = {

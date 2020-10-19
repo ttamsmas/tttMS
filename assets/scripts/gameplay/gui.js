@@ -1,7 +1,7 @@
 'use strict'
 
 const store = require('../store.js')
-const app = require('../app.js')
+const gapi = require('./gapi')
 
 const newGameSuccess = function (response) {
   $('#message').text('New Game Succesfully Created')
@@ -32,6 +32,8 @@ const checkWinner = function (response) {
   if (currentGame[0] !== '' && currentGame[0] === currentGame[1] && currentGame[1] === currentGame[2]) {
     $('#xOTurn').text(currentGame[0] + ' is our winner!')
     store.winner = true
+    const data = { over: true }
+    gapi.updateGameWinner(data)
   } else if (currentGame[3] !== '' && currentGame[3] === currentGame[4] && currentGame[4] === currentGame[5]) {
     $('#xOTurn').text(currentGame[3] + ' is our winner!')
     store.winner = true
@@ -67,6 +69,15 @@ const blockMove = function () {
   $('#message').text('We have a winner! Click New Game to play again')
 }
 
+const playerStatsAll = function (response) {
+  console.log(response.games)
+  $('#message').text(response.games.length + ' games played')
+}
+
+const playerStatsFail = function () {
+  $('#message').text('No Player Record')
+}
+
 module.exports = {
   newGameSuccess,
   newGameFailure,
@@ -75,5 +86,7 @@ module.exports = {
   invalidMove,
   checkWinner,
   checkFail,
-  blockMove
+  blockMove,
+  playerStatsAll,
+  playerStatsFail
 }

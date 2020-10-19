@@ -30,8 +30,28 @@ const checkGame = function (data) {
   })
 }
 
+const playerStatistics = function (data) {
+  return $.ajax({
+    url: config.apiUrl + '/games',
+    headers: {'Authorization': 'Bearer ' + store.user.token},
+    method: 'GET',
+    data: data
+  })
+}
+
+const updateGameWinner = function (data) {
+  return $.ajax({
+    url: config.apiUrl + '/games/' + store.game,
+    headers: {'Authorization': 'Bearer ' + store.user.token},
+    method: 'PATCH',
+    data: data
+  })
+}
+
 module.exports = {
   newGame,
   clicked,
-  checkGame
+  checkGame,
+  playerStatistics,
+  updateGameWinner
 }

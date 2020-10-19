@@ -2,8 +2,20 @@
 
 $alt-color: $cyan;
 $bg-color: $gray-200;
-$font-color: $light;
+$font-color: #FFFFFF;
 $border-color: 1px #000000 solid;
+$font-outline: #000000
+
+h1  {
+  color: $font-color;
+  text-align: center;
+  text-shadow: -1px -1px 0 $font-outline, 1px -1px 0  $font-outline, -1px 1px 0  $font-outline, 1px 1px 0  $font-outline;
+}
+
+p {
+  justify-content: center;
+  margin: 0 auto;
+}
 
 .board {
  background-color: $bg-color;
@@ -13,12 +25,15 @@ $border-color: 1px #000000 solid;
 .container {
   display: flex;
   flex-wrap: wrap;
-  align-content: space-between;
+  align-content: space-around;
 }
 
 .col-4 {
   border: $border-color;
   width: 28%;
   padding-top: 28%;
-  font-size: 100%;
+  font-size: 30;
+  color: $font-color;
+  text-align: center;
+  text-shadow: -1px -1px 0 $font-outline, 1px -1px 0  $font-outline, -1px 1px 0  $font-outline, 1px 1px 0  $font-outline;
 }

@@ -26,12 +26,12 @@ const onClick = function (event) {
       over: 'false'
     }
   }
-  console.log(sendUpdate)
   const currentValue = $(event.target).text()
-  console.log(currentValue)
   if (currentValue === '') {
     gapi.clicked(sendUpdate)
       .then(gui.clickedSuccess)
+      .then(gapi.checkGame)
+      .then(gui.checkWinner)
       .catch(gui.clickedFailure)
     $(event.target).html(store.turn)
     if (store.turn === 'x') {
@@ -39,10 +39,7 @@ const onClick = function (event) {
     } else {
       store.turn = 'x'
     }
-  } else {
-    gui.invalidMove
   }
-  console.log(event.target)
   // turn event.target off after being clicked
   // document.querySelector(this).off()
 }

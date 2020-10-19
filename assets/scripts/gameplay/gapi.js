@@ -21,7 +21,17 @@ const clicked = function (data) {
   })
 }
 
+const checkGame = function (data) {
+  return $.ajax({
+    url: config.apiUrl + '/games/' + store.game,
+    headers: {'Authorization': 'Bearer ' + store.user.token},
+    method: 'GET',
+    data: data
+  })
+}
+
 module.exports = {
   newGame,
-  clicked
+  clicked,
+  checkGame
 }

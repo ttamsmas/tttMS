@@ -26,10 +26,20 @@ const invalidMove = function () {
   $('#message').text('That Tile Has Been Taken')
 }
 
+const checkWinner = function (response) {
+  console.log(response.game.cells)
+}
+
+const checkFail = function () {
+  $('#message').text('This Game Record is Corrupt')
+}
+
 module.exports = {
   newGameSuccess,
   newGameFailure,
   clickedFailure,
   clickedSuccess,
-  invalidMove
+  invalidMove,
+  checkWinner,
+  checkFail
 }

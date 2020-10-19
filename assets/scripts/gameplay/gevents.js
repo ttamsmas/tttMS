@@ -13,36 +13,39 @@ const onNewGame = function (event) {
     .then(gui.newGameSuccess)
     .then($('.col-4').text(''))
     .catch(gui.newGameSuccess)
+  store.winner = false
 }
-
+// if no winner then click otherwise stop further moves
 const onClick = function (event) {
-  const form = event.target
-  const cellIndex = form.id
-  const sendUpdate = {
-    game: {
-      cell: {
-        index: cellIndex,
-        value: store.turn
-      },
-      over: 'false'
+  if (store.winner === true) {
+    gui.blockMove()
+  } else {
+    const form = event.target
+    const cellIndex = form.id
+    const sendUpdate = {
+      game: {
+        cell: {
+          index: cellIndex,
+          value: store.turn
+        },
+        over: 'false'
+      }
+    }
+    const currentValue = $(event.target).text()
+    if (currentValue === '') {
+      gapi.clicked(sendUpdate)
+        .then(gui.clickedSuccess)
+        .then(gapi.checkGame)
+        .then(gui.checkWinner)
+        .catch(gui.clickedFailure)
+      $(event.target).html(store.turn)
+      if (store.turn === 'x') {
+        store.turn = 'o'
+      } else {
+        store.turn = 'x'
+      }
     }
   }
-  const currentValue = $(event.target).text()
-  if (currentValue === '') {
-    gapi.clicked(sendUpdate)
-      .then(gui.clickedSuccess)
-      .then(gapi.checkGame)
-      .then(gui.checkWinner)
-      .catch(gui.clickedFailure)
-    $(event.target).html(store.turn)
-    if (store.turn === 'x') {
-      store.turn = 'o'
-    } else {
-      store.turn = 'x'
-    }
-  }
-  // turn event.target off after being clicked
-  // document.querySelector(this).off()
 }
 
 module.exports = {

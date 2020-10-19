@@ -1,6 +1,7 @@
 'use strict'
 
 const store = require('../store.js')
+const app = require('../app.js')
 
 const newGameSuccess = function (response) {
   $('#message').text('New Game Succesfully Created')
@@ -27,31 +28,43 @@ const invalidMove = function () {
 }
 
 const checkWinner = function (response) {
-  console.log(response.game.cells)
   const currentGame = response.game.cells
   if (currentGame[0] !== '' && currentGame[0] === currentGame[1] && currentGame[1] === currentGame[2]) {
     $('#xOTurn').text(currentGame[0] + ' is our winner!')
+    store.winner = true
   } else if (currentGame[3] !== '' && currentGame[3] === currentGame[4] && currentGame[4] === currentGame[5]) {
     $('#xOTurn').text(currentGame[3] + ' is our winner!')
+    store.winner = true
   } else if (currentGame[6] !== '' && currentGame[6] === currentGame[7] && currentGame[7] === currentGame[8]) {
     $('#xOTurn').text(currentGame[6] + ' is our winner!')
+    store.winner = true
   } else if (currentGame[0] !== '' && currentGame[0] === currentGame[3] && currentGame[3] === currentGame[6]) {
     $('#xOTurn').text(currentGame[0] + ' is our winner!')
+    store.winner = true
   } else if (currentGame[1] !== '' && currentGame[1] === currentGame[4] && currentGame[4] === currentGame[7]) {
     $('#xOTurn').text(currentGame[1] + ' is our winner!')
+    store.winner = true
   } else if (currentGame[2] !== '' && currentGame[2] === currentGame[5] && currentGame[5] === currentGame[8]) {
     $('#xOTurn').text(currentGame[2] + ' is our winner!')
+    store.winner = true
   } else if (currentGame[0] !== '' && currentGame[0] === currentGame[4] && currentGame[4] === currentGame[8]) {
     $('#xOTurn').text(currentGame[0] + ' is our winner!')
+    store.winner = true
   } else if (currentGame[6] !== '' && currentGame[6] === currentGame[4] && currentGame[4] === currentGame[2]) {
     $('#xOTurn').text(currentGame[6] + ' is our winner!')
+    store.winner = true
   } else if (currentGame[0] !== '' && currentGame[1] !== '' && currentGame[2] !== '' && currentGame[3] !== '' && currentGame[4] !== '' && currentGame[5] !== '' && currentGame[6] !== '' && currentGame[7] !== '' && currentGame[8] !== '') {
     $('#xOTurn').text('Game is a Draw')
+    store.winner = true
   }
 }
 
 const checkFail = function () {
   $('#message').text('This Game Record is Corrupt')
+}
+
+const blockMove = function () {
+  $('#message').text('We have a winner! Click New Game to play again')
 }
 
 module.exports = {
@@ -61,5 +74,6 @@ module.exports = {
   clickedSuccess,
   invalidMove,
   checkWinner,
-  checkFail
+  checkFail,
+  blockMove
 }

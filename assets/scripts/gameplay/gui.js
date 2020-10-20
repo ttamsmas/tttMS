@@ -72,7 +72,6 @@ const blockMove = function () {
 }
 
 const playerStatsAll = function (response) {
-  console.log(response.games)
   $('#message').text(response.games.length + ' games played')
 }
 

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Example</title>
+    <title>T^3</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Do not add `link` tags-->
@@ -13,70 +13,72 @@
 
   </head>
   <body>
-    <h1>T^3</h1>
+    <h1 id="title">Tic Tac Toe</h1>
     <div id="communication">
       <h2 id="xOTurn"></h2>
       <p id="message"></p>
     </div>
-    <section>
-      <form id="sign-up-form">
-        <fieldset>
-          <legend>Create New Account</legend>
-          <label for="sign-up-email">Email</label>
-          <input id="sign-up-email" type="email" name="credentials[email]" placeholder="Email">
-          <label for="sign-up-password">Password</label>
-          <input id="sign-up-password" type="password" name="credentials[password]" placeholder="Password">
-          <label for="sign-up-password_confirmation">Confirm Password</label>
-          <input id="sign-up-password_confirmmation" type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
-          <input type="submit" value="Create">
-        </fieldset>
-      </form>
-    </section>
-    <section>
-      <form id="sign-in-form">
-        <fieldset>
-          <legend>Sign In</legend>
-          <label for="sign-in-email">Email</label>
-          <input id="sign-in-email" type="email" name="credentials[email]" placeholder="Email">
-          <label for="sign-in-password">Password</label>
-          <input id="sign-in-password" type="password" name="credentials[password]" placeholder="Password">
-          <input type="submit" value="Sign in!">
-        </fieldset>
-      </form>
-    </section>
-    <section>
-      <form id="change-password-form" style="display: none">
-        <fieldset>
-          <legend>Change Password</legend>
-          <label for="old-password">Old Password</label>
-          <input id="old-password" type="password" name="passwords[old]" placeholder="Password">
-          <label for="new-password_confirmation">New Password</label>
-          <input id="new-password_confirmmation" type="password" name="passwords[new]" placeholder="New Password">
-          <input type="submit" value="Change Password!">
-        </fieldset>
-      </form>
-    </section>
-    <section>
-      <form id="sign-out-form" style="display: none">
-        <fieldset>
-          <input type="submit" value="Sign-Out">
-        </fieldset>
-      </form>
-    </section>
-    <section>
-      <form id="new-game" style="display: none">
-        <fieldset>
-          <input type="submit" value="New Game">
-        </fieldset>
-      </form>
-    </section>
-    <section>
-      <form id="player-stats" style="display: none">
-        <fieldset>
-          <input type="submit" value="Player Stats">
-        </fieldset>
-      </form>
-    </section>
+    <div id="FormFields">
+      <section>
+        <form id="sign-up-form">
+          <fieldset>
+            <legend>Create New Account</legend>
+            <label for="sign-up-email">Email</label>
+            <input id="sign-up-email" type="email" name="credentials[email]" placeholder="Email">
+            <label for="sign-up-password">Password</label>
+            <input id="sign-up-password" type="password" name="credentials[password]" placeholder="Password">
+            <label for="sign-up-password_confirmation">Confirm Password</label>
+            <input id="sign-up-password_confirmmation" type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+            <input type="submit" value="Create">
+          </fieldset>
+        </form>
+      </section>
+      <section>
+        <form id="sign-in-form">
+          <fieldset>
+            <legend>Sign In</legend>
+            <label for="sign-in-email">Email</label>
+            <input id="sign-in-email" type="email" name="credentials[email]" placeholder="Email">
+            <label for="sign-in-password">Password</label>
+            <input id="sign-in-password" type="password" name="credentials[password]" placeholder="Password">
+            <input type="submit" value="Sign in!">
+          </fieldset>
+        </form>
+      </section>
+      <section>
+        <form id="change-password-form" style="display: none">
+          <fieldset>
+            <legend>Change Password</legend>
+            <label for="old-password">Old Password</label>
+            <input id="old-password" type="password" name="passwords[old]" placeholder="Password">
+            <label for="new-password_confirmation">New Password</label>
+            <input id="new-password_confirmmation" type="password" name="passwords[new]" placeholder="New Password">
+            <input type="submit" value="Change Password!">
+          </fieldset>
+        </form>
+      </section>
+      <section>
+        <form id="sign-out-form" style="display: none">
+          <fieldset>
+            <input type="submit" value="Sign-Out">
+          </fieldset>
+        </form>
+      </section>
+      <section>
+        <form id="new-game" style="display: none">
+          <fieldset>
+            <input type="submit" value="New Game">
+          </fieldset>
+        </form>
+      </section>
+      <section>
+        <form id="player-stats" style="display: none">
+          <fieldset>
+            <input type="submit" value="Player Stats">
+          </fieldset>
+        </form>
+      </section>
+    </div>
     <section>
       <div class='board'>
         <h1>Game Board</h1>

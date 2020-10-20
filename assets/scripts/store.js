@@ -1,7 +1,7 @@
 'use strict'
 
 const store = {
-  turn: 'x'
+  turn: 'X'
 }
 
 module.exports = store

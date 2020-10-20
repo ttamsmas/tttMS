@@ -27,6 +27,7 @@ const invalidMove = function () {
 }
 
 // the check winner function matches values horizontally, vertically, and diagonally
+// prevent blank spaces from creating a winner by verifying at least one of the winning tiles contains a value
 // if winner is selected, the store.winner value is changed to true, blocking future moves
 const checkWinner = function (response) {
   const currentGame = response.game.cells

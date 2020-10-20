@@ -1,15 +1,18 @@
 @import '~bootstrap/scss/bootstrap';
 
 $alt-color: $cyan;
-$bg-color: $gray-200;
+$bg-color: #c5fcdb;
 $font-color: #FFFFFF;
-$border-color: 1px #000000 solid;
+$border-color: 1px #000000 double;
 $font-outline: #000000;
+$cell-dimensions: 28vw;
+$text-shadow: -1px -1px 0 $font-outline, 1px -1px 0  $font-outline, -1px 1px 0  $font-outline, 1px 1px 0  $font-outline;
+$alt-border: 3px #2dba86 ridge;
 
 h1  {
   color: $font-color;
   text-align: center;
-  text-shadow: -1px -1px 0 $font-outline, 1px -1px 0  $font-outline, -1px 1px 0  $font-outline, 1px 1px 0  $font-outline;
+  text-shadow: $text-shadow;
 }
 
 p {
@@ -18,22 +21,32 @@ p {
 }
 
 .board {
- background-color: $bg-color;
+ border: $alt-border;
+ margin: 3% 4% 0 4%;
  padding: 1% 0 7% 0;
 }
 
 .container {
   display: flex;
+  align-items: stretch;
   flex-wrap: wrap;
-  align-content: space-around;
 }
 
 .col-4 {
+  align-content: stretch;
+  background: $bg-color;
   border: $border-color;
-  width: 28%;
-  padding-top: 28%;
-  font-size: 30;
   color: $font-color;
+  width: $cell-dimensions;
+  height: same-as-width;
+  justify-content: center;
+  padding-top: 28%;
+  resize: none;
   text-align: center;
-  text-shadow: -1px -1px 0 $font-outline, 1px -1px 0  $font-outline, -1px 1px 0  $font-outline, 1px 1px 0  $font-outline;
+  text-shadow: $text-shadow;
+  width: $cell-dimensions;
+}
+
+#title {
+  border-bottom: $border-color;
 }

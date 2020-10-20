@@ -52,10 +52,10 @@ const onClick = function (event) {
         .catch(gui.clickedFailure)
       $(event.target).html(store.turn)
       // alternate filling tile as x and o via store.turn field
-      if (store.turn === 'x') {
-        store.turn = 'o'
+      if (store.turn === 'X') {
+        store.turn = 'O'
       } else {
-        store.turn = 'x'
+        store.turn = 'X'
       }
     }
   }

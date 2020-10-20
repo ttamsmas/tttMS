@@ -16,11 +16,6 @@ h1  {
   text-shadow: $text-shadow;
 }
 
-p {
-  justify-content: center;
-  margin: 0 auto;
-}
-
 .board {
  border: $alt-border;
  margin: 3% 4% 0 4%;
@@ -35,13 +30,13 @@ p {
 }
 
 .col-4 {
-  align-content: stretch;
+  align-content: space-around;
   background: $bg-color;
   border: $border-color;
   color: $font-color;
   width: $cell-dimensions;
   height: same-as-width;
-  justify-content: center;
+  justify-content: space-around;
   padding-top: 28%;
   resize: none;
   text-align: center;
@@ -51,4 +46,19 @@ p {
 
 #title {
   border-bottom: $border-color;
+}
+
+#communication {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#FormFields {
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  margin: 0 5vw 0 5vw;
 }

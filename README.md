@@ -18,7 +18,7 @@ This application was built to replicate Tic Tac Toe with functionality tracking 
 
 ## Important Links
 
-[Deployed Client](https://ttamsmas.github.io/tttMS-client/)
+[Deployed Client](https://ttamsmas.github.io/tttMS/)
 
 ## Planning Story
 

@@ -8,6 +8,7 @@ $font-outline: #000000;
 $cell-dimensions: 28vw;
 $text-shadow: -1px -1px 0 $font-outline, 1px -1px 0  $font-outline, -1px 1px 0  $font-outline, 1px 1px 0  $font-outline;
 $alt-border: 3px #2dba86 ridge;
+$alt-bg-color: #e1f7ef;
 
 h1  {
   color: $font-color;
@@ -24,6 +25,7 @@ p {
  border: $alt-border;
  margin: 3% 4% 0 4%;
  padding: 1% 0 7% 0;
+ background: $alt-bg-color;
 }
 
 .container {

@@ -34,15 +34,18 @@ const signInFailure = function () {
 }
 
 const updateSucces = function () {
-  $('#message').text('Password Update Complete')
+  $('#message').text('Password Has Been Updated Successfully')
+  $('#old-password').val('')
+  $('#new-password_confirmmation').val('')
 }
 
 const updateFail = function () {
-  $('#message').text('Update Failed, Please Try Again')
+  $('#message').text('Update Password Failed, Please Try Again')
 }
 
 const signOutSuccess = function (response) {
-  $('#message').text('Sign Out Successful')
+  $('#message').text('Sign Out Successful, Please Sign In Again To Play')
+  $('#xOTurn').text('')
   $('#change-password-form').hide()
   $('#sign-out-form').hide()
   $('#sign-in-form').show()
@@ -53,7 +56,9 @@ const signOutSuccess = function (response) {
   $('#sign-up-password').val('')
   $('#sign-up-password_confirmation').val('')
   $('#new-game').hide()
-  store.user = ''
+  delete store.user
+  delete store.game
+  store.turn = 'X'
   $('#player-stats').hide()
 }
 

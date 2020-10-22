@@ -6,7 +6,7 @@ const gapi = require('./gapi')
 const newGameSuccess = function (response) {
   $('#message').text('New Game Succesfully Created')
   store.game = response.game._id
-  $('#xOTurn').text('X Goes First')
+  $('#xOTurn').text(store.turn + ' Goes First') // needs to have o go first after the first game
 }
 
 const newGameFailure = function () {
@@ -68,7 +68,7 @@ const checkFail = function () {
 }
 
 const blockMove = function () {
-  $('#message').text('We have a winner! Click New Game to play again')
+  $('#message').text('Click New Game to play again')
 }
 
 const playerStatsAll = function (response) {
@@ -80,7 +80,11 @@ const playerStatsFail = function () {
 }
 
 const loginFirst = function () {
-  $('#message').text('Sign In or Select New Game to Begin')
+  $('#message').text('Login to Begin')
+}
+
+const newGameFirst = function () {
+  $('#message').text('Select New Game to Begin')
 }
 
 module.exports = {
@@ -94,5 +98,6 @@ module.exports = {
   blockMove,
   playerStatsAll,
   playerStatsFail,
-  loginFirst
+  loginFirst,
+  newGameFirst
 }

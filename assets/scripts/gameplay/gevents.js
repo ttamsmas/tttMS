@@ -24,9 +24,12 @@ const onNewGame = function (event) {
 const onClick = function (event) {
   if (store.winner === true) {
     gui.blockMove()
-  } else if (store.game === undefined) {
-    // prevent move if no game has been created
+  } else if (store.user === undefined) {
+    // force sign in if signed out and try to click board
     gui.loginFirst()
+  } else if (store.game === undefined) {
+    // if no game created, force user to click new game
+    gui.newGameFirst()
   } else {
     const form = event.target
     const cellIndex = form.id
@@ -60,6 +63,7 @@ const onClick = function (event) {
     }
   }
 }
+
 // the GET request for the user's game record is a large object that can be reported multiple ways
 // may add functionallity for win and loss
 // queued from the gui tab unlike all other events

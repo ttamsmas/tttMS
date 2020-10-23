@@ -77,7 +77,7 @@ The basic HTML is styled within the index.scss file and is made to accommodate s
     2. User Goal: Select Player Color
 
     2. Developer Goal: Increased ease of gameplay through tools like color selection can make the application more approachable and therefore successful
-
+    
     2. Acceptance Criteria: Multiple color play options selectable by the user
 
     2. Measurement of Success: Attempt all color selection options for all user play options

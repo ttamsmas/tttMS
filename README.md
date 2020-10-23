@@ -98,8 +98,8 @@ The basic HTML is styled within the index.scss file and is made to accommodate s
 
 ## Planning Wireframes
 
-[Login Landing Page Wireframe](https://imgur.com/9WzSUsq “Login Landing Page”)
+[Login Landing Page Wireframe](https://imgur.com/9WzSUsq)
 
-[Mobile Game Board Wireframe](https://imgur.com/c3ZaYgL “Mobile Game Board”)
+[Mobile Game Board Wireframe](https://imgur.com/c3ZaYgL)
 
-[Regular Screen Board Wireframe](https://imgur.com/mCQosdJ “Regular Screen Board”)
+[Regular Screen Board Wireframe](https://imgur.com/mCQosdJ)

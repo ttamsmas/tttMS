@@ -19,6 +19,7 @@ This application was built to replicate Tic Tac Toe with functionality tracking 
 ## Important Links
 
 [Deployed Client](https://ttamsmas.github.io/tttMS-client/)
+
 [Repository](https://github.com/ttamsmas/tttMS-client)
 
 ## Planning Story
@@ -42,21 +43,33 @@ The basic HTML is styled within the index.scss file and is made to accommodate s
 ## User Stories
 
  1. As a multi-platform user, I want to be able to load my profile so I can continue my progress.
+
     2. User Goal: Profile sign in and user record
+
     2. Developer Goal: Having developed game profiles could increase user playtime and overall engagement.
+
     2. Acceptance Criteria: Sign-in & sign-out of multiple users
+
     2. Measurement of Success: The creation of a new user, sign-in, and sign-out works for multiple users via direct testing
 
  1. As a competitive user, I want to see my win/loss rate so I can show off my abilities
+
     2. User Goal: Game Statistics Summarizing W/L
+
     2. Developer Goal: Visualizing and allowing user scores to be sharable could improve competition and user loyalty
+
     2. Acceptance Criteria: Win-Loss is accurately expressed for new or existing users
+
     2. Measurement of Success: Audit New User Profile against a manual record of win-loss rate
 
  1. As a finicky user, I want to be able to end my game in the middle so I don't have to go through the motions of losing.
+
     2. User Goal: Reset game record and board in the middle of a game
+
     2. Developer Goal: Making it easier to start a new game means the user is less likely to leave the application because they avoid frustrations like continuing to play a losing game
+
     2. Acceptance Criteria: New Game is Created and Game Board’s x’s & o’s are cleared
+
     2. Measurement of Success: Test the New Game button in the middle of playing a round
 
   1. As a visually stimulated user, I want to select my color so I can keep track of which icon I am applying to.
@@ -82,5 +95,7 @@ The basic HTML is styled within the index.scss file and is made to accommodate s
 ## Planning Wireframes
 
 [Login Landing Page Wireframe](https://imgur.com/9WzSUsq “Login Landing Page”)
+
 [Mobile Game Board Wireframe](https://imgur.com/c3ZaYgL “Mobile Game Board”)
+
 [Regular Screen Board Wireframe](https://imgur.com/mCQosdJ “Regular Screen Board”)
